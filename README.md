@@ -1,0 +1,11 @@
+# 用于将主机的某个目录定时推送到阿里云的 OSS
+
+## 环境配置
+
+BUCKET
+
+ACCESS_KEY_ID
+
+ACCESS_KEY_SECRET
+
+OSS_ENDPOINT
