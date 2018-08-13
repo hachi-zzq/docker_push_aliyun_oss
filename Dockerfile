@@ -9,10 +9,10 @@ RUN apt-get -y update && \
 	gdebi -n /tmp/ossfs_1.80.5_ubuntu16.04_amd64.deb
 
 
-COPY start.sh /tmp/start.sh
+COPY start.sh /bin/start.sh
 COPY tar_storage.sh /bin/tar_storage.sh
 
-RUN chmod a+x /tmp/start.sh && \
+RUN chmod a+x /bin/start.sh && \
 	chmod a+x /bin/tar_storage.sh && \
 	mkdir /oss && \
 	mkdir /share && \
@@ -21,4 +21,4 @@ echo "0 18 * * * /bin/tar_storage.sh > /var/log/crond.log" >>/var/spool/cron/cro
 
 VOLUME ["/share"]
 
-CMD ["/tmp/start.sh"]
+CMD ["/bin/start.sh"]
