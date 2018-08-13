@@ -17,7 +17,7 @@ RUN chmod a+x /tmp/start.sh && \
 	mkdir /oss && \
 	mkdir /share && \
 
-echo "0 2 * * * /bin/tar_storage.sh" >>/var/spool/cron/crontabs/root 
+echo "0 18 * * * /bin/tar_storage.sh > /var/log/crond.log" >>/var/spool/cron/crontabs/root 
 
 VOLUME ["/share"]
 
