@@ -6,6 +6,7 @@ RUN apt-get -y update && \
 	apt-get -y install gdebi-core && \
 	apt-get -y install cron && \
 	apt-get -y install bzip2 && \
+	apt-get -y install tzdata && \
 	gdebi -n /tmp/ossfs_1.80.5_ubuntu16.04_amd64.deb
 
 
@@ -16,8 +17,10 @@ RUN chmod a+x /tmp/start.sh && \
 	chmod a+x /bin/tar_storage.sh && \
 	mkdir /oss && \
 	mkdir /share && \
+	echo "Asia/Shanghai" > /etc/timezone && \
+	dpkg-reconfigure -f noninteractive tzdata
 
-echo "* 2 */1 * * /bin/tar_storage.sh" >>/var/spool/cron/crontabs/root 
+echo "0 2 * * * sh /bin/tar_storage.sh" >> /var/spool/cron/crontabs/root 
 
 VOLUME ["/share"]
 
