@@ -18,9 +18,8 @@ RUN chmod a+x /tmp/start.sh && \
 	mkdir /oss && \
 	mkdir /share && \
 	echo "Asia/Shanghai" > /etc/timezone && \
-	dpkg-reconfigure -f noninteractive tzdata
-
-echo "0 2 * * * sh /bin/tar_storage.sh" >> /var/spool/cron/crontabs/root 
+	dpkg-reconfigure -f noninteractive tzdata && \
+	echo "0 2 * * * sh /bin/tar_storage.sh" >> /var/spool/cron/crontabs/root 
 
 VOLUME ["/share"]
 
