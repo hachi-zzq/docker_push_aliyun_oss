@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 dir="/oss/$(date -d '+0 hours' +%Y)/$(date -d '+0 hours' +%m)"
 
