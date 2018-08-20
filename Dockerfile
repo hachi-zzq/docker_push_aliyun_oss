@@ -7,6 +7,7 @@ RUN apt-get -y update && \
 	apt-get -y install cron && \
 	apt-get -y install bzip2 && \
 	apt-get -y install tzdata && \
+	apt-get -y install vim && \
 	gdebi -n /tmp/ossfs_1.80.5_ubuntu16.04_amd64.deb
 
 
