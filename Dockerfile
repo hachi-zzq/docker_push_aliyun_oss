@@ -19,7 +19,7 @@ RUN chmod a+x /tmp/start.sh && \
 	mkdir /oss && \
 	mkdir /share && \
  	cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
- 	echo "*/1 * * * * env >> /var/log/env.log" >> /var/spool/cron/crontabs/root 
+ 	echo "*/1 * * * * env >> /var/log/env.log" >> /var/spool/cron/crontabs/root  && \
 	echo "*/2 * * * * /bin/tar_storage.sh > /var/log/crond.log" >> /var/spool/cron/crontabs/root 
 
 VOLUME ["/share"]
