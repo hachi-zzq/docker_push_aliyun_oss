@@ -12,14 +12,14 @@ RUN apt-get -y update && \
 
 
 COPY start.sh /tmp/start.sh
-COPY tar_storage.sh /bin/tar_storage.sh
+COPY tar_storage.sh /etc/cron.daily/tar_storage
 
 RUN chmod a+x /tmp/start.sh && \
 	chmod a+x /bin/tar_storage.sh && \
 	mkdir /oss && \
 	mkdir /share && \
- 	cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-
+ 	cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+ 	chmod 0755 /etc/cron.daily/tar_storage
 
 VOLUME ["/share"]
 
