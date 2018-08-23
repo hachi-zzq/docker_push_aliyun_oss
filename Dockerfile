@@ -15,7 +15,6 @@ COPY start.sh /tmp/start.sh
 COPY tar_storage.sh /etc/cron.daily/tar_storage
 
 RUN chmod a+x /tmp/start.sh && \
-	chmod a+x /bin/tar_storage.sh && \
 	mkdir /oss && \
 	mkdir /share && \
  	cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
